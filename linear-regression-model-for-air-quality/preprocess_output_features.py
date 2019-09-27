@@ -37,15 +37,15 @@ target = preprocess(data)
 target.to_csv('hourly_SO2_2015.csv')
 
 
-# Preprocessing hourly O3 data
+# # Preprocessing hourly O3 data
 
-data = pd.read_csv('hourly_44201_2015.csv')
-target = preprocess(data)
-target.to_csv('hourly_O3_2015.csv')
+# data = pd.read_csv('hourly_44201_2015.csv')
+# target = preprocess(data)
+# target.to_csv('hourly_O3_2015.csv')
 
 
-# Preprocessing hourly PM data
+# # Preprocessing hourly PM data
 
-data = pd.read_csv('hourly_88101_2015.csv')
-target = preprocess(data)
-target.to_csv('hourly_PM_2015.csv')
+# data = pd.read_csv('hourly_88101_2015.csv')
+# target = preprocess(data)
+# target.to_csv('hourly_PM_2015.csv')

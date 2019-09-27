@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import math
+import matplotlib.pyplot as plt
 
 
 df_inner = pd.read_csv('joined_data.csv')
@@ -14,15 +15,18 @@ def remove_null_columns(data_frame):
         data_frame = data_frame[pd.notnull(data_frame[col])]
     return data_frame
 
+df_inner = remove_null_columns(df_inner)
+
+
+def normalize(data_frame):
+    normalized_data_frame = ((data_frame-data_frame.min())/(data_frame.max()-data_frame.min()))
+    return normalized_data_frame
 
 df_inner = remove_null_columns(df_inner)
 # for col in df_inner.columns:
 #     df_inner = df_inner[pd.notnull(df_inner[col])]
 # df_inner.shape
 
-def normalize(data_frame):
-    normalized_data_frame = ((data_frame-data_frame.min())/(data_frame.max()-data_frame.min()))
-    return normalized_data_frame
 
 # normalization
 
@@ -77,3 +81,20 @@ print(newB)
 
 # Final Cost of new B
 print(cost_history[-1])
+
+iterations = [i for i in range(1,number_of_iterations+1)]
+
+
+
+ 
+plt.plot(iterations, cost_history, color='blue')
+plt.xlabel('iterations')
+plt.ylabel('MSE')
+ 
+# giving a title to my graph
+plt.title('MSE vs iterations')
+
+# plt.legend()
+
+# function to show the plot
+plt.show()
